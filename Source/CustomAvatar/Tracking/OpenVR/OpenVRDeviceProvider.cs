@@ -43,7 +43,7 @@ namespace CustomAvatar.Tracking.OpenVR
             devices.Clear();
             bool changeDetected = false;
 
-            _openVRFacade.GetDeviceToAbsoluteTrackingPose(ETrackingUniverseOrigin.TrackingUniverseStanding, _poses);
+            _openVRFacade.GetLastPoses(_poses);
 
             for (uint i = 0; i < _poses.Length; i++)
             {

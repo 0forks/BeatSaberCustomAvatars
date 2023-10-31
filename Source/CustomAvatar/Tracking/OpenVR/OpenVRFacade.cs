@@ -87,6 +87,12 @@ namespace CustomAvatar.Tracking.OpenVR
             OpenVR.System.GetDeviceToAbsoluteTrackingPose(universeOrigin, GetPredictedSecondsToPhotons(), poses);
         }
 
+        public void GetLastPoses(TrackedDevicePose_t[] poses)
+        {
+            var gamePoses = new TrackedDevicePose_t[0];
+            OpenVR.Compositor.GetLastPoses(poses, gamePoses);
+        }
+
         public void GetPositionAndRotation(HmdMatrix34_t rawMatrix, out Vector3 position, out Quaternion rotation)
         {
             position = new Vector3(rawMatrix.m3, rawMatrix.m7, -rawMatrix.m11);
